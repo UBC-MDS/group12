@@ -1,6 +1,6 @@
 # Project Proposal
 
-the project title
+This project attempts to find the association between the probability of heart attack and various demographic or medical factors of the patient.
 
 ### Contributors:
 - Kelly Wu
@@ -8,39 +8,34 @@ the project title
 - Zilong Yi
 - Stepan Zaiatc
 
-### Introduction
-
-
-### 1. Dataset
+### Dataset
 Heart Attack dataset
+- link
 
-### 2. Research Question
-To be discussed
+### Research Question & Planned Analysis
+We are going to use hypothesis testing to investigate a few factors that could possibly associates with having higher probability of heart attack.
+- Do people with higher probability of heart attack and people with lower probability of heart attack have the equal cholestoral level or inequal cholestoral level? To answer this question, we will first investigate the central tendency of cholestoral level of the two groups by estimating the average cholestoral level with sample means. We will use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average cholestoral levels are the same between people with lower probability and higher probability of heart attack. Our alternative hypothesis is that the average cholestoral levels is higher for people with higher probability of heart attack than that of people with lower probability of heart attack.
 
-### 3. Data Analysis
-Supervised machine learning (for predictive research question)
-Data preprocessing based on observations from EDA
-Model selection:
-conduct cross validation on various classifiers (or regressor). E.g. Dummy as baseline, KNN, SVM, NaiveBayes, Ridge, or Logistic). Pick the model with better performance. or we can just pick on that we think is suitable.
-hyperparameter tuning using RandomSearch
-Model assessment using test score. (we can also use new metrics that we just learned like precision, recall, ROC etc.)
-Prediction on test data as an approximate for its performance on deployment data
+** note: in EDA if we find any factor that seems to have association between heart attack we can switch to that factor.
+
+- We could also explore another factor in this dataset: fasting blood sugar > 120 mg/dl. The question we want to answer is that if fasting blood sugar > 120 mg/dl is associated with lower or higher probability of heart attack. We will conduct chi-square test of independence to see if this factor impact the probability.
 
 
-Statistical inference (for inferential research questions)
-We could choose one of the following two goals.
-Estimating population parameter
-sample estimate & bootstrapping for CI of the estimate
-or MLE ( need to assume a distribution family)
-Hypothesis testing via bootstrapping or classical approach(CLT)
+### EDA
+table
+- smaple min, max, median, mean, sd for each factor.
+- histogram for each numeric factor.
+- bar plot for each categorical factor.
 
-### 4. EDA
-- table
-- figure
+figure 
+- for cholestoral level (numeric var) boxplot + individual observations in grey marks. comparing the two groups
+- for exercise: bubble chart
+
 
 ### 5. Sharing the results
-For inferential: share the result using visualization, box plot with observations
-For predictive: share model assessment.
+We will conduct the analysis in Jupyter notebook format and publish the result on GitHub for open access. Our repository would contain the raw data file, the .ipynb notebook that includes all the technical details on how the analysis evolved throughout the process, and a final report that summarize the major findings and reports the our conclusion. 
+
+We will document our thinking process and the method of our analysis in the notebook using markdown and code comments to sure that our analysis is reproducible and auditable.
 
 ### Licences
 The ___ materials here are licensed under the ____ (e.g. Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA)). If re-using/re-mixing please provide attribution and link to this webpage.
