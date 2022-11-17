@@ -20,9 +20,7 @@ bug, create an associated issue and illustrate the bug with a minimal
 ### Pull request process
 
 *  We recommend that you create a Git branch for each pull request (PR).  
-*  New code should follow the tidyverse [style guide](http://style.tidyverse.org).
-You can use the [styler](https://CRAN.R-project.org/package=styler) package to
-apply these styles, but please don't restyle code that has nothing to do with 
+*  New code should follow the tidyverse [style guide](http://style.tidyverse.org) or PEP8 [style guide](https://www.python.org/dev/peps/pep-0008/). Please don't restyle code that has nothing to do with 
 your PR.  
 
 ### Code of Conduct
