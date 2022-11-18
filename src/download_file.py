@@ -2,7 +2,7 @@
 # date: 2022-11-18
 
 """Downloading csv file from the web and saving it locally by providing the filepath.
-Usage: data/raw/download_data.py --url=<url> --out_file=<out_file>
+Usage: download_file.py --url=<url> --out_file=<out_file>
 Options:
 --url=<url>              URL from where to download the data (must be in standard csv format)
 --out_file=<out_file>    Path (including filename) of where to locally write the file
