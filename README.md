@@ -8,25 +8,25 @@ This project attempts to find the association between the probability of heart a
 - Zilong Yi
 - Stepan Zaiatc
 
-###Dependencies
+### Dependencies
 
-#Python 3.10.6 and Python packages:
+# Python 3.10.6 and Python packages:
 
-docopt==0.7.1
+- docopt==0.7.1
 
-altair_saver==0.1.0
+- altair_saver==0.1.0
 
-pandas==1.5.1
+- pandas==1.5.1
 
-ipython==7.10.1
+- ipython==7.10.1
 
-#R version 4.2.1 and R packages:
+# R version 4.2.1 and R packages:
 
-knitr==1.40
+- knitr==1.40
 
-tidyverse==1.3.2
+- tidyverse==1.3.2
 
-ggplot==3.3.6
+- ggplot==3.3.6
 
 ### Dataset
 **Heart Attack Dataset from the UCI Machine Learning Repository. Center for Machine Learning and Intelligent Systems.**
