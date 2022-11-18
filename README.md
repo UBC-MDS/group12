@@ -8,6 +8,32 @@ This project attempts to find the association between the probability of heart a
 - Zilong Yi
 - Stepan Zaiatc
 
+## Usage
+
+There are four databases that are required to complete this project - Cleveland, Hungary, Switzerland, and the VA Long Beach. This data set contains 76 features, but we are only going to be using 14 of them that are relevant to our question of interest. 
+
+In order to replicate this analysis, clone this GitHub repository (git clone), install the dependencies listed below in the "Dependencies" section, and run the following commands at the command line from the root directory of this project:
+
+### VA Long Beach Database
+```
+python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.va.data" --out_file="data/raw/processed.va.csv"
+```
+
+### Cleveland
+```
+python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
+```
+
+### Hungary
+```
+python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data" --out_file="data/raw/processed.hungarian.csv"
+```
+
+### Switzerland
+```
+python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.switzerland.data" --out_file="data/raw/processed.switzerland.csv"
+```
+
 ## Dependencies
 
 #### Python 3.10.6 and Python packages:
