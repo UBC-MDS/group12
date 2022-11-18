@@ -8,9 +8,9 @@ This project attempts to find the association between the probability of heart a
 - Zilong Yi
 - Stepan Zaiatc
 
-### Dependencies
+## Dependencies
 
-# Python 3.10.6 and Python packages:
+#### Python 3.10.6 and Python packages:
 
 - docopt==0.7.1
 
@@ -20,7 +20,7 @@ This project attempts to find the association between the probability of heart a
 
 - ipython==7.10.1
 
-# R version 4.2.1 and R packages:
+#### R version 4.2.1 and R packages:
 
 - knitr==1.40
 
