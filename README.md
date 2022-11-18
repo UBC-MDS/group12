@@ -10,7 +10,7 @@ This project attempts to find the association between the probability of heart a
 
 ## Usage
 
-There are four databases that are required to complete this project - Cleveland, Hungary, Switzerland, and the VA Long Beach. This data set contains 76 features, but we are only going to be using 14 of them that are relevant to our question of interest. 
+There are four databases that are required to complete this project - Cleveland, Hungary, Switzerland, and the VA Long Beach. This data set contains 76 features, but we are only going to be using 14 of them that are relevant to our question of interest. The dowload python script to download the databases is located in the src folder of this repository.
 
 In order to replicate this analysis, clone this GitHub repository (git clone), install the dependencies listed below in the "Dependencies" section, and run the following commands at the command line from the root directory of this project:
 
