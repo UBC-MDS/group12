@@ -19,17 +19,17 @@ In order to replicate this analysis, clone this GitHub repository (git clone), i
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.va.data" --out_file="data/raw/processed.va.csv"
 ```
 
-#### Cleveland
+#### Cleveland Database
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
 ```
 
-#### Hungary
+#### Hungary Database
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data" --out_file="data/raw/processed.hungarian.csv"
 ```
 
-#### Switzerland
+#### Switzerland Database
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.switzerland.data" --out_file="data/raw/processed.switzerland.csv"
 ```
