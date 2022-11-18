@@ -14,22 +14,22 @@ There are four databases that are required to complete this project - Cleveland,
 
 In order to replicate this analysis, clone this GitHub repository (git clone), install the dependencies listed below in the "Dependencies" section, and run the following commands at the command line from the root directory of this project:
 
-### VA Long Beach Database
+#### VA Long Beach Database
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.va.data" --out_file="data/raw/processed.va.csv"
 ```
 
-### Cleveland
+#### Cleveland
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
 ```
 
-### Hungary
+#### Hungary
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data" --out_file="data/raw/processed.hungarian.csv"
 ```
 
-### Switzerland
+#### Switzerland
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.switzerland.data" --out_file="data/raw/processed.switzerland.csv"
 ```
