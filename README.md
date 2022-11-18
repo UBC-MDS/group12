@@ -61,6 +61,6 @@ We will document our thinking process and the method of our analysis in the note
 ### Licences
 The ___ materials here are licensed under the ____ (e.g. Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA)). If re-using/re-mixing please provide attribution and link to this webpage.
 
-#### References
+## References
 
 Dua, Dheeru, and Casey Graff. 2019. “UCI Machine Learning Repository.” University of California, Irvine, School of Information; Computer Sciences. http://archive.ics.uci.edu/ml.
