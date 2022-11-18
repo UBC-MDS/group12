@@ -23,7 +23,7 @@ We are going to use hypothesis testing to investigate a few factors that could p
 
 ### EDA
 table
-- smaple min, max, median, mean, sd for each factor.
+- sample min, max, median, mean, sd for each factor.
 - histogram for each numeric factor.
 - bar plot for each categorical factor.
 
