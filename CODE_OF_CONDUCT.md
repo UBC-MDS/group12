@@ -41,4 +41,4 @@ Project maintainers who do not follow or enforce the Code of Conduct in good fai
 
 ## Attribution
 
-This Code of Conduct is copied from the [Code_Of_Conduct](https://github.com/ttimbers/breast_cancer_predictor/blob/master/README.Rmd), which was adapted from the [Contributor Covenant](https://www.contributor-covenant.org/), version 1.4, available at [http://contributor-covenant.org/version/1/4][version]
+This Code of Conduct is copied from the [Code_Of_Conduct](https://github.com/ttimbers/breast_cancer_predictor/blob/master/README.Rmd), which was adapted from the [Contributor Covenant](https://www.contributor-covenant.org/), version 1.4, available at [http://contributor-covenant.org/version/1/4]
