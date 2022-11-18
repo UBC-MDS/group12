@@ -9,8 +9,9 @@ This project attempts to find the association between the probability of heart a
 - Stepan Zaiatc
 
 ### Dataset
-Heart Attack dataset
-- link
+**Heart Attack Dataset from the UCI Machine Learning Repository. Center for Machine Learning and Intelligent Systems.**
+
+https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
 
 ### Research Question & Planned Analysis
 We are going to use hypothesis testing to investigate a few factors that could possibly associates with having higher probability of heart attack.
