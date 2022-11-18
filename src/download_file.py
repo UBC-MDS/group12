@@ -2,6 +2,9 @@
 # date: 2022-11-18
 
 """Downloading csv file from the web and saving it locally by providing the filepath.
+The databases will be downloaded to the out_file path specified.
+In this project the data is downloaded into the data/raw folder.
+
 Usage: download_file.py --url=<url> --out_file=<out_file>
 Options:
 --url=<url>              URL from where to download the data (must be in standard csv format)
