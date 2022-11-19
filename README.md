@@ -1,4 +1,4 @@
-# Project Proposal
+# Project Proposal for the inferential analysis on factors relate with presence of heart disease
 
 This project attempts to find the association between the probability of heart attack and various demographic or medical factors of the patient. We attempt to use hypothesis testing on several demographic and medical factors between people who are not diagnosed with heart disease and those who are diagnosed with heart disease to make inference on whether certain factor are associated with presence of heart disease. 
 
@@ -20,10 +20,16 @@ python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learni
 ```
 
 ### Research Question & Planned Analysis
-We are going to use hypothesis testing to investigate a few factors that could possibly associates with presence of heart attack. 
-We have the following columns available from the dataset:
-- 1.age 
-- 2.sex
+
+Our research question: what factor(s) are associated with presence of heart disease? This is an inferential research question. To answer this question, we will need to answer a following sub-questions:
+- Does any numerical feature distribute differently between people with and without heart disease?
+- Does any categorical feature is frequently occurred among people with heart disease?
+- Do we have statistically significant evidence to state that the observed trend is not due to chance?
+- If we do find a factor that shows statistical significance, how large is its effect on the probability of presence of heart disease? 
+
+We have the following columns available from the dataset :
+- 1. age  
+- 2. sex 
 - 3. cp: chest pain type 
 - 4. trestbps: resting blood pressure (in mm Hg)
 - 5. chol: serum cholestoral in mg/dl
@@ -37,24 +43,34 @@ We have the following columns available from the dataset:
 - 13. thal: defect(3 = normal; 6 = fixed defect; 7 = reversable defect)
 - 14. target: diagnosis of heart disease
 
-Our analysis is driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/EDA_group_12.ipynb).
+Our planned analysis includes the following steps and methods. 
 
-When comparing the summary statistics between the people with heart disease and people without heart disease, we noticed that
+During EDA:
+- We will visualize the numerical features with overlaying histograms to compare the distribution of these features between the two groups. We will also compare the summary statistics (e.g. mean, standard deviation) of numeric features between the two groups. We will also examine the correlation between each pair of numerical features to get an idea of it colinearity would affect the investigation later on. 
 
+- Also, for categorical features, we will do cross-tabulations to see the frequency of each categories between the two groups. We will also create bar charts to visualize if any category is often frequently occur in the group with heart disease.
 
-, we observed that 
-The following are the factor of interest and the analysis we are going to conduct using the dataset. 
-- Do people with higher probability of heart attack and people with lower probability of heart attack have the equal cholestoral level or inequal cholestoral level? To answer this question, we will first investigate the central tendency of cholestoral level of the two groups by estimating the average cholestoral level with sample means. We will use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average cholestoral levels are the same between people with lower probability and higher probability of heart attack. Our alternative hypothesis is that the average cholestoral levels is higher for people with higher probability of heart attack than that of people with lower probability of heart attack.
-
-** note: in EDA if we find any factor that seems to have association between heart attack we can switch to that factor.
-
-- We could also explore another factor in this dataset: fasting blood sugar > 120 mg/dl. The question we want to answer is that if fasting blood sugar > 120 mg/dl is associated with lower or higher probability of heart attack. We will conduct chi-square test of independence to see if this factor impact the probability.
+- With EDA, we would be able to get an idea of which factors to further examine.
 
 
-### Render jupyter notebook
-By downloading the database, the EDA file is in doc/EDA_group_12.ipynb, please open the file and run all the cells.
+
+Our analysis well be driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/EDA_group_12.ipynb).
+
+In later analysis, we are going to conduct hypothesis testing to investigate a the identified potentially factors that could possibly associates with presence of heart attack. Specifically, 
+- For numeric features, we will first check the central tendency, then conduct hypothesis testing. For example, maximum heart rate achieved is an variable of interest. We will first investigate the central tendency of maximum heart rate achieved of the two groups by estimating the average with sample means. We will also use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average maximum heart rate achieved are the same between people with heart disease and without heart disease. Our alternative hypothesis is that the average maximum heart rate achieved is lower for people with heart disease than that of people without heart disease.
+- For categorical features, we could conduct Chi-square test to see if the factor and the presence of heart disease are independent. 
+
+
+### Sharing the results
+We will conduct the analysis in Jupyter notebook format and publish the result on GitHub for open access. Our repository would contain the raw data file, the .ipynb notebook that includes all the technical details on how the analysis evolved throughout the process, and a final report that summarize the major findings and reports the our conclusion. 
+
+We will document our thinking process and the method of our analysis in the notebook using markdown and code comments to sure that our analysis is reproducible and auditable.
+
+In the final report, we will convey the major finding with a table of summary statistics (sample mean, standard error, 95% boootstrap CI) as long as the hypothesis test results (test statistics, p-values). Also, histograms and bar charts will be provided in the report to visualize how the distribution varies between the two group of patients.
 
 ## Dependencies
+
+Note on reproducing the analysis: our the analysis is conducted with the following packages.
 
 #### Python 3.10.6 and Python packages:
 
@@ -74,32 +90,10 @@ By downloading the database, the EDA file is in doc/EDA_group_12.ipynb, please o
 
 - ggplot==3.3.6
 
-### Dataset
-**Heart Attack Dataset from the UCI Machine Learning Repository. Center for Machine Learning and Intelligent Systems.**
 
-https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
-
-
-
-
-### EDA
-table
-- sample min, max, median, mean, sd for each factor.
-- histogram for each numeric factor.
-- bar plot for each categorical factor.
-
-figure 
-- for cholestoral level (numeric var) boxplot + individual observations in grey marks. comparing the two groups
-- for exercise: bubble chart
-
-
-### 5. Sharing the results
-We will conduct the analysis in Jupyter notebook format and publish the result on GitHub for open access. Our repository would contain the raw data file, the .ipynb notebook that includes all the technical details on how the analysis evolved throughout the process, and a final report that summarize the major findings and reports the our conclusion. 
-
-We will document our thinking process and the method of our analysis in the notebook using markdown and code comments to sure that our analysis is reproducible and auditable.
 
 ### Licences
-The ___ materials here are licensed under the ____ (e.g. Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA)). If re-using/re-mixing please provide attribution and link to this webpage.
+The materials of this inferential analysis on factors relate with presence of heart disease here are licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. If re-using/re-mixing please provide attribution and link to this webpage.
 
 ## References
 
