@@ -1,6 +1,6 @@
 # Project Proposal
 
-This project attempts to find the association between the probability of heart attack and various demographic or medical factors of the patient.
+This project attempts to find the association between the probability of heart attack and various demographic or medical factors of the patient. We attempt to use hypothesis testing on several demographic and medical factors between people who are not diagnosed with heart disease and those who are diagnosed with heart disease to make inference on whether certain factor are associated with presence of heart disease. 
 
 ### Contributors:
 - Kelly Wu
@@ -8,31 +8,49 @@ This project attempts to find the association between the probability of heart a
 - Zilong Yi
 - Stepan Zaiatc
 
-## Usage
+## Dataset
 
-There are four databases that are required to complete this project - Cleveland, Hungary, Switzerland, and the VA Long Beach. This data set contains 76 features, but we are only going to be using 14 of them that are relevant to our question of interest. The dowload python script to download the databases is located in the src folder of this repository.
+The dataset used in this project is the heart disease data set from the UCI machine learning repository. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source dataset was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found [here](https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data). 
+This dataset contains 14 features that deemed to be relevant by the ML researchers. In this project, we will use the cleaned and processed Cleveland data set to conduct an inferential study on factors that could be associated with presence of heart disease. 
 
-In order to replicate this analysis, clone this GitHub repository (git clone), install the dependencies listed below in the "Dependencies" section, and run the following commands at the command line from the root directory of this project:
+The python script for downloading the database is located in the src folder of this repository. To replicate this analysis, clone this GitHub repository (git clone), install the dependencies listed below in the "Dependencies" section, and run the following commands at the command line from the root directory of this project:
 
-#### VA Long Beach Database
-```
-python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.va.data" --out_file="data/raw/processed.va.csv"
-```
-
-#### Cleveland Database
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
 ```
 
-#### Hungary Database
-```
-python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data" --out_file="data/raw/processed.hungarian.csv"
-```
+### Research Question & Planned Analysis
+We are going to use hypothesis testing to investigate a few factors that could possibly associates with presence of heart attack. 
+We have the following columns available from the dataset:
+- 1.age 
+- 2.sex
+- 3. cp: chest pain type 
+- 4. trestbps: resting blood pressure (in mm Hg)
+- 5. chol: serum cholestoral in mg/dl
+- 6. fbs: fasting blood sugar > 120 mg/dl
+- 7. estecg: resting electrocardiographic results
+- 8. thalach: maximum heart rate achieved
+- 9. exang: exercise induced angina (0 = no, 1 = yes)
+- 10. oldpeak = ST depression induced by exercise relative to rest
+- 11. slope: the slope of the peak exercise ST segment
+- 12. ca: number of major vessels (0-3) colored by flourosopy
+- 13. thal: defect(3 = normal; 6 = fixed defect; 7 = reversable defect)
+- 14. target: diagnosis of heart disease
 
-#### Switzerland Database
-```
-python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.switzerland.data" --out_file="data/raw/processed.switzerland.csv"
-```
+Our analysis is driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/EDA_group_12.ipynb).
+
+When comparing the summary statistics between the people with heart disease and people without heart disease, we noticed that
+
+
+, we observed that 
+The following are the factor of interest and the analysis we are going to conduct using the dataset. 
+- Do people with higher probability of heart attack and people with lower probability of heart attack have the equal cholestoral level or inequal cholestoral level? To answer this question, we will first investigate the central tendency of cholestoral level of the two groups by estimating the average cholestoral level with sample means. We will use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average cholestoral levels are the same between people with lower probability and higher probability of heart attack. Our alternative hypothesis is that the average cholestoral levels is higher for people with higher probability of heart attack than that of people with lower probability of heart attack.
+
+** note: in EDA if we find any factor that seems to have association between heart attack we can switch to that factor.
+
+- We could also explore another factor in this dataset: fasting blood sugar > 120 mg/dl. The question we want to answer is that if fasting blood sugar > 120 mg/dl is associated with lower or higher probability of heart attack. We will conduct chi-square test of independence to see if this factor impact the probability.
+
+
 ### Render jupyter notebook
 By downloading the database, the EDA file is in doc/EDA_group_12.ipynb, please open the file and run all the cells.
 
@@ -61,13 +79,7 @@ By downloading the database, the EDA file is in doc/EDA_group_12.ipynb, please o
 
 https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
 
-### Research Question & Planned Analysis
-We are going to use hypothesis testing to investigate a few factors that could possibly associates with having higher probability of heart attack.
-- Do people with higher probability of heart attack and people with lower probability of heart attack have the equal cholestoral level or inequal cholestoral level? To answer this question, we will first investigate the central tendency of cholestoral level of the two groups by estimating the average cholestoral level with sample means. We will use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average cholestoral levels are the same between people with lower probability and higher probability of heart attack. Our alternative hypothesis is that the average cholestoral levels is higher for people with higher probability of heart attack than that of people with lower probability of heart attack.
 
-** note: in EDA if we find any factor that seems to have association between heart attack we can switch to that factor.
-
-- We could also explore another factor in this dataset: fasting blood sugar > 120 mg/dl. The question we want to answer is that if fasting blood sugar > 120 mg/dl is associated with lower or higher probability of heart attack. We will conduct chi-square test of independence to see if this factor impact the probability.
 
 
 ### EDA
