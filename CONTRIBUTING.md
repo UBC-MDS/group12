@@ -1,4 +1,4 @@
-# Contributing to ___ project name to be decided ___
+# Contributing to the heart attack inferential project
 
 This outlines how to propose a change to this project. 
 
