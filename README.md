@@ -33,6 +33,8 @@ python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learni
 ```
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.switzerland.data" --out_file="data/raw/processed.switzerland.csv"
 ```
+### Render jupyter notebook
+By downloading the database, the EDA file is in doc/EDA_group_12.ipynb.
 
 ## Dependencies
 
