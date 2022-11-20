@@ -1,6 +1,6 @@
 # Project Proposal for the inferential analysis on factors relate with presence of heart disease
 
-This project attempts to find the association between the probability of heart attack and various demographic or medical factors of the patient. We attempt to use hypothesis testing on several demographic and medical factors between people who are not diagnosed with heart disease and those who are diagnosed with heart disease to make inference on whether certain factor are associated with presence of heart disease. 
+This project attempts to find the association between the probability of heart disease and various demographic or medical factors of the patient. We attempt to use hypothesis testing on several demographic and medical factors between people who are not diagnosed with heart disease and those who are diagnosed with heart disease to make inference on whether certain factor are associated with presence of heart disease. 
 
 ### Contributors:
 - Kelly Wu
@@ -45,16 +45,15 @@ We have the following columns available from the dataset :
 
 Our planned analysis includes the following steps and methods. 
 
-During EDA:
-- We will visualize the numerical features with overlaying histograms to compare the distribution of these features between the two groups. We will also compare the summary statistics (e.g. mean, standard deviation) of numeric features between the two groups. We will also examine the correlation between each pair of numerical features to get an idea of it colinearity would affect the investigation later on. 
+During EDA, We will visualize the numerical features with overlaying histograms to compare the distribution of these features between the two groups. We will compare the summary statistics (e.g. mean, standard deviation) of numeric features between the two groups. We will also examine the correlation between each pair of numerical features to get an idea of it colinearity would affect the investigation later on. 
 
-- Also, for categorical features, we will do cross-tabulations to see the frequency of each categories between the two groups. We will also create bar charts to visualize if any category is often frequently occur in the group with heart disease.
+Also, for categorical features, we will do cross-tabulations to see the frequency of each categories between the two groups. We will also create bar charts to visualize if any category is often frequently occur in the group with heart disease.
 
-- With EDA, we would be able to get an idea of which factors to further examine.
-
+With EDA, we would be able to get an idea of which factors to further examine.
 
 
-Our analysis well be driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/EDA_group_12.ipynb).
+
+Our analysis will be driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/EDA_group_12.ipynb).
 
 In later analysis, we are going to conduct hypothesis testing to investigate a the identified potentially factors that could possibly associates with presence of heart attack. Specifically, 
 - For numeric features, we will first check the central tendency, then conduct hypothesis testing. For example, maximum heart rate achieved is an variable of interest. We will first investigate the central tendency of maximum heart rate achieved of the two groups by estimating the average with sample means. We will also use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average maximum heart rate achieved are the same between people with heart disease and without heart disease. Our alternative hypothesis is that the average maximum heart rate achieved is lower for people with heart disease than that of people without heart disease.
