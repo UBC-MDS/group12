@@ -45,8 +45,6 @@ The data set used in this project is the heart disease data set from the UCI mac
 
 ```{r load result csv, include=FALSE}
 library(here)
-library(knitr)
-library(kableExtra)
 
 ci <- read.csv(here("results", "bootstrap_ci_results.csv"))
 ci$target <- ifelse(ci$target ==0, "No heart disease", "Presence of heart disease")
