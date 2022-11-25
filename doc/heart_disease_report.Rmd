@@ -1,0 +1,55 @@
+---
+title: "Inferential analysis on factors relate with presence of heart disease"
+author: "Kelly Wu </br>
+Bruce Wu </br>
+Zilong Yi </br>
+Stepan Zaiatc </br>"
+date: "2022/11/25 (updated: `r Sys.Date()`)"
+always_allow_html: true
+output: 
+  html_document:
+    toc: true
+  github_document:
+    toc: true
+bibliography: heart_disease_refs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+```
+
+```{r load model results}
+
+```
+
+# Summary
+
+In this project we attempt to find the association between the probability of heart disease and various demographic or medical factors of the patients including including age, sex, chest pain type, cholesterol levels etc. In this study, we are performing hypothesis testing using permutation test for numerical variables such as age, the maximum heart rate achieved, and ST depression induced by exercise relative to rest which is considered a proven ECG finding for obstructive coronary atherosclerosis [@lanza2004diagnostic]. Our original data set also included some categorical variables that we use to conduct our hypothesis testing using Chi-Squared Test in the analysis of contingency tables.
+
+(INCLUDE THE QUICK SUMMARY OF THE RESULTS)
+
+# Introduction
+
+Cardiovascular diseases are the leading cause of death world wide. It is estimated by the World Health Organization that there are around 17.9 million people who die because of the cardiovascular diseases yearly. It is an estimated 32% of all deaths worldwide [@who]. Some of the important risk factors that contribute to heart disease are unhealthy diet, sedentary lifestyle, tobacco, alcohol abuse and many more. The projection is that the prevalence of heart attack in both genders, man and women, will increase compared with 2025 for ischemic heart disease by 31.1% (21.9M to 28.7M), heart failure by 33.0% (9.7M to 12.9M), myocardial infarction by 30.1% (12.3M to 16.0M), and stroke by 34.3% (10.8M to 14.5M) [@mohebi2022cardiovascular].
+
+Here we are using inferential statistics methods to infer about the relationship between the risks of heart attack and different factors taht might be associated with heart attack. If we were to find the relationship between the different factors contributing the elevated risks of heart attack then we would be able to mitigate the risk by lowering the effect of those contributing factors on individuals lifestyles. In this study we are asked several inferential question and evaluated the statistical significance of the variables contributed to increased risks of heart attack.
+
+# Methods
+
+## Data
+
+The data set used in this project is the heart disease data set from the UCI machine learning repository [@aha]. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source data set was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found here [here] (<https://archive.ics.uci.edu/ml/datasets/Heart+Disease>). This data set contains 14 features that deemed to be relevant by the ML researchers. In this project, we will use the cleaned and processed Cleveland data set to conduct an inferential study on factors that could be associated with presence of heart disease.
+
+## Analysis
+
+# Results & Discussion
+
+
+###### Limitations & Future Improvements
+
+This study has several strength and limitations. The most important strength is that it is one of the few studies that looked at the different factors associated with heart disease by employing inferential statistics methods using UCI data set. Most of of the studies done previously were focused on predictions using the machine learning models. The limitations of this study is that since the data analyzed is from a population that hasn't been fully quantified, we can't be fully sure about the statistics being calculated. Our data set is only limited to few examples from Cleveland data set. Due to this limited sample data drawn from the census, there always be some level of uncertainly in this study. The second limitation is that in order for us to conduct hypothesis testing, we are required to make certain assumptions and educated guesses on what variables are most likely to have an association. This will bring some level of uncertainty to the results gathered from this study. In addition, conducting many hypothesis testing may elevate the level of bias or multiple comparison problem where we consider multiple statistical inferences simultaneously. To mitigate the severity of this problem, we could define a more strict significance level for all of the individual hypothesis testings. We could also use Bonferroni correction to reduce the probability of commiting type I error. Furthermore, we could apply intrinsic originality to categorical variables in Chi-Squared test, however, due to limited domain knowledge, we were unable to do so in this study. Even we were unable to find the association between the different variables in this study, at least it will allow further studies to build upon the conclusions drawn here and consider the effects of other variables associated with increase heart disease risks. Finally, to further improve this study, the analysis could focus on building models to estimate the how the likelihood of presence of heart disease is impacted by changing certain variables values while holding other factors constant. For this, we would require mode knowledge on liner regression to evaluate statistical significance of multiple linear regression model.
+
+# References
