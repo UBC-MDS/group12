@@ -1,0 +1,7 @@
+"var_name","target","sample_estimates","lower_ci","upper_ci"
+"age_mean","0",52.64,51.17,54.08
+"age_mean","1",56.76,55.5,58.01
+"thalach_mean","0",158.58,155.41,161.48
+"thalach_mean","1",139.11,135.18,142.88
+"oldpeak_median","0",0.2,0,0.45
+"oldpeak_median","1",1.4,1.2,1.8

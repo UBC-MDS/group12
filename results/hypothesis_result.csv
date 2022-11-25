@@ -1,0 +1,4 @@
+"variables","estimator","H_a","target0_estimate","target1_estimate","test_statistic","p_values"
+"age","diff in mean","greater",52.64,56.76,4.12,0
+"thalach","diff in mean","less",158.58,139.11,-19.47,0
+"oldpeak","diff in median","greater",0.2,1.4,1.2,0
