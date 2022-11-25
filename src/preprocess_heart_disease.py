@@ -31,6 +31,16 @@ opt = docopt(__doc__)
 #function to read and clean the data 
 def main(input_file, out_file):
 
+    """
+    This main will read the dataset from path that contains raw data file.
+    Parameters
+    ----------
+    input_file : str
+        Path to a raw data file to be processed.
+    out_file : str
+        The path to where to process the file.
+    """
+
     # read data and convert raw data file
     heart_raw = pd.read_csv(input_file)
 

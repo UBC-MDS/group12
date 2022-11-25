@@ -18,6 +18,15 @@ import pandas as pd
 opt = docopt(__doc__)
 
 def main(url, out_file):
+"""
+    This main will download the dataset from the default url to the default path
+    Parameters
+    ----------
+    from_url : str
+        URL from where to download the dataset (must be in standard csv format)
+    out_file : str
+        File name with the path where to write the file
+  """
 
   data = pd.read_csv(url, header=None)
   
