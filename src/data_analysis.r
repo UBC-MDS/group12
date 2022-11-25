@@ -14,6 +14,8 @@
 library(tidyverse)
 library(infer)
 library(broom)
+library(janitor)
+
 options(repr.matrix.max.rows = 6)
 
 # TO BE DELETED 
@@ -160,7 +162,7 @@ target1_estimate <- c(bootstrap_ci_results[[3]][2], bootstrap_ci_results[[3]][4]
 test_statistic <- c(age_delta_star, thalach_delta_star, oldpeak_delta_star)
 p_values <- c(age_result,thalach_result,oldpeak_result)
 
-hypothesis_result <- data.frame(variables, estimator, H_alternative, 
+hypothesis_result <- data.frame(variables, estimator, H_a, 
                                 target0_estimate, target1_estimate, test_statistic,
                                 p_values)
 # export for reporting
@@ -169,6 +171,38 @@ write.csv(hypothesis_result, "results/hypothesis_result.csv", row.names = FALSE)
 
 
 # CATEGORICAL VARIABLES
+# chi-square testing for the following categorical variables:
+# sex
+# cp: chest pain type
+# fbs: fasting blood sugar > 120 mg/dl
+# restecg: resting electrocardiographic results
+# exang: exercise induced angina (0 = no, 1 = yes)
+# slope: the slope of the peak exercise ST segment
+# ca: number of major vessels (0-3) colored by flourosopy
+# thal: defect(3 = normal; 6 = fixed defect; 7 = reversable defect)
+cont_table_AB <- heart_data %>% tabyl(sex, target)
+chisq_result <- tidy(chisq.test(cont_table_AB, correct = FALSE))
+cont_table_AB <- heart_data %>% tabyl(cp, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+cont_table_AB <- heart_data %>% tabyl(fbs, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+cont_table_AB <- heart_data %>% tabyl(restecg, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+cont_table_AB <- heart_data %>% tabyl(exang, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+cont_table_AB <- heart_data %>% tabyl(slope, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+cont_table_AB <- heart_data %>% tabyl(ca, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+cont_table_AB <- heart_data %>% tabyl(thal, target)
+chisq_result <- rbind(chisq_result, tidy(chisq.test(cont_table_AB, correct = FALSE)))
+chisq_result$variable <- c("sex", "chest pain type", "fasting blood sugar level >120mg/dl",
+                           "resting electrocardiographic results", "exercise induced angina", 
+                           "slope of the peak exercise ST segment", "number of major vessels", 
+                           "defect type")
+chisq_result <- chisq_result |> select(variable, statistic, p.value) |> 
+  mutate(reject0.05 = ifelse(p.value<0.05, 'reject null', 'failed to reject'),
+         reject_Bonferroni_corrected = ifelse(p.value<0.05/8, 'reject null', 'failed to reject'))
 
-# chi-square testing for categorical variables
+write.csv(chisq_result, "results/chisq_result.csv", row.names = FALSE)
 
