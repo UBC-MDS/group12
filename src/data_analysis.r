@@ -202,7 +202,9 @@ chisq_result$variable <- c("sex", "chest pain type", "fasting blood sugar level 
                            "defect type")
 chisq_result <- chisq_result |> select(variable, statistic, p.value) |> 
   mutate(reject0.05 = ifelse(p.value<0.05, 'reject null', 'failed to reject'),
-         reject_Bonferroni_corrected = ifelse(p.value<0.05/8, 'reject null', 'failed to reject'))
+         reject_Bonferroni_corrected = ifelse(p.value<0.05/8, 'reject null', 'failed to reject'),
+         p.value = round(p.value, 6),
+         statistic = round(statistic, 2))
 
 write.csv(chisq_result, "results/chisq_result.csv", row.names = FALSE)
 
