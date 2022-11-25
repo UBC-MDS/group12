@@ -41,7 +41,8 @@ def main(input_file, out_file):
         "10":"slope", "11":"ca", "12":"thal", "13":"target"})
 
     # creating a new binary target variable where 1 is a positive class
-    heart_modified[heart_modified['target'] != 0] = 1
+    heart_modified.loc[(heart_modified.target != 0),'target']=1
+
 
     # replacing all of the "?"" values with NaN
     heart_clean = heart_modified.replace('?', np.nan)
