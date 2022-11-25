@@ -73,6 +73,8 @@ Note on reproducing the analysis: our the analysis is conducted with the followi
 
 #### Python 3.10.6 and Python packages:
 
+- dataframe-image==0.1.3
+
 - docopt==0.7.1
 
 - altair_saver==0.1.0
