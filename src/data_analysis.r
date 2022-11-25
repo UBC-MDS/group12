@@ -1,14 +1,8 @@
-# "This script runs data analysis for the preprocessed heart disease data.
-# Usage: data_analysis.r --data_path=<path>
-# Options:
-# --data_path=<path> Takes any value (this is a required option)
-# " -> doc
-# 
-# library(docopt)
-# opt <- docopt(doc)
-# 
-# # load preprocessed data from the input path
-# heart_data <- read_csv(opt$path)
+"This script runs data analysis for the preprocessed heart disease data.
+Usage: data_analysis.r --data_path=<path>
+Options:
+--data_path=<path> Takes the path to a directory where the pre-processed dataset is stored (this is a required option)
+" -> doc
 
 # Libraries & options
 library(tidyverse)
@@ -16,20 +10,24 @@ library(infer)
 library(broom)
 library(janitor)
 
-options(repr.matrix.max.rows = 6)
+library(docopt)
+opt <- docopt(doc)
 
-# TO BE DELETED 
-heart_data <- read.csv("data/raw/processed.cleveland.csv")
-colnames(heart_data) <- c("age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","target")
-heart_data <- heart_data |>
-  mutate(target = ifelse(target != 0, 1, 0),
-         ca = as.numeric(ca),
-         thal = as.numeric(thal)) |> 
-  drop_na()
+# load preprocessed data from the input path
+heart_data <- read_csv(opt$path)
 
-# GLimpse the dataset
+# CODE BELOW ARE NOT FOR PIPELINE
+# if one wants to work on the analysis script stand-alone file, then the follow code could be helpful for preprocessing
+# heart_data <- read.csv("data/raw/processed.cleveland.csv")
+# colnames(heart_data) <- c("age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal","target")
+# heart_data <- heart_data |>
+#   mutate(target = ifelse(target != 0, 1, 0),
+#          ca = as.numeric(ca),
+#          thal = as.numeric(thal)) |> 
+#   drop_na()
+
+# Convert target to factor
 heart_data$target <- as.factor(heart_data$target)
-summary(heart_data)
 # age
 # sex
 # cp: chest pain type
