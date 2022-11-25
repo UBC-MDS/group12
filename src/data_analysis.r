@@ -13,8 +13,8 @@
 # Libraries & options
 library(tidyverse)
 library(infer)
+library(broom)
 options(repr.matrix.max.rows = 6)
-
 
 # TO BE DELETED 
 heart_data <- read.csv("data/raw/processed.cleveland.csv")
@@ -26,6 +26,7 @@ heart_data <- heart_data |>
   drop_na()
 
 # GLimpse the dataset
+heart_data$target <- as.factor(heart_data$target)
 summary(heart_data)
 # age
 # sex
@@ -106,37 +107,68 @@ ci_estimates <- heart_data |> group_by(target) |> nest() |>
          upper_ci = round(upper_ci, 2))
 oldpeak_median_ci <- medians |> left_join(ci_estimates)
 
-# Export all CI and sample estimtes in a table as csv for reporting
+# Export all CI and sample estimates in a table as csv for reporting
 bootstrap_ci_results <- rbind(age_mean_ci, thalach_mean_ci, oldpeak_median_ci)
-write.csv(bootstrap_ci_results,"results.csv", row.names = FALSE)
+write.csv(bootstrap_ci_results, "results/bootstrap_ci_results.csv", row.names = FALSE)
 
 
 # Next perform the hypothesis testing with permutation
+# 1. Age
+# H0: means are equal for both groups
+# Ha: means for target = 1 is greater than that of target = 0
+levels(heart_data$target)
+age_delta_star <- diff(age_mean_ci$sample_estimates)
+set.seed(12)
+age_result <- heart_data |> specify(formula = age ~ target) |> 
+  hypothesize(null="independence") |> 
+  generate(reps = 5000, type = "permute") |> 
+  calculate(stat = "diff in means",
+            order = c(1, 0)) |> 
+  get_pvalue(obs_stat = age_delta_star, direction = "greater")|> pull()
+
+# 2. thalach
+# H0: means are equal for both groups
+# Ha: means for target = 1 is lower than that of target = 0
+levels(heart_data$target)
+thalach_delta_star <- diff(thalach_mean_ci$sample_estimates)
+set.seed(12)
+thalach_result <- heart_data |> specify(formula = thalach ~ target) |> 
+  hypothesize(null="independence") |> 
+  generate(reps = 5000, type = "permute") |> 
+  calculate(stat = "diff in means",
+            order = c(1, 0)) |> 
+  get_pvalue(obs_stat = thalach_delta_star, direction = "less")|> pull()
+
+# 3. oldpeak
+# H0: means are equal for both groups
+# Ha: means for target = 1 is higher than that of target = 0
+oldpeak_delta_star <- diff(oldpeak_median_ci$sample_estimates)
+set.seed(12)
+oldpeak_result <- heart_data |> specify(formula = oldpeak ~ target) |> 
+  hypothesize(null="independence") |> 
+  generate(reps = 5000, type = "permute") |> 
+  calculate(stat = "diff in medians",
+            order = c(1, 0)) |> 
+  get_pvalue(obs_stat = oldpeak_delta_star, direction = "greater") |> pull()
+
+# Interim conclusion: all tested hypothesis are rejected
+variables <- c("age", "thalach", "oldpeak")
+estimator <- c("diff in mean", "diff in mean", "diff in median")
+H_a <- c("greater", "less", "greater")
+target0_estimate <- c(bootstrap_ci_results[[3]][1], bootstrap_ci_results[[3]][3], bootstrap_ci_results[[3]][5])
+target1_estimate <- c(bootstrap_ci_results[[3]][2], bootstrap_ci_results[[3]][4], bootstrap_ci_results[[3]][6])
+test_statistic <- c(age_delta_star, thalach_delta_star, oldpeak_delta_star)
+p_values <- c(age_result,thalach_result,oldpeak_result)
+
+hypothesis_result <- data.frame(variables, estimator, H_alternative, 
+                                target0_estimate, target1_estimate, test_statistic,
+                                p_values)
+# export for reporting
+write.csv(hypothesis_result, "results/hypothesis_result.csv", row.names = FALSE)
+
 
 
 # CATEGORICAL VARIABLES
-
-
-# may need wrangling
-df <- df %>%
-  mutate( click_target = factor(click_target), webpage = factor(webpage))
-
-# NOTE : check 95 % bootstrap CI of the numeric variables of interest
-
-set.seed(522)
-age_ci <- heart_data %>%
-  filter(webpage == "Interact") %>%
-  specify(response = click_target, success = "1") %>%
-  generate(reps = 1000, type = "bootstrap") %>%
-  calculate(stat = "prop") %>%
-  get_ci()
-
-interact_ci$webpage <- "Interact"
-interact_ci
-(repeat for the other treatment too)
-cis <- bind_rows(interact_ci, services_ci)
-
-
 
 # chi-square testing for categorical variables
 
