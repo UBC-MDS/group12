@@ -31,21 +31,114 @@ In this project we attempt to find the association between the probability of he
 
 (INCLUDE THE QUICK SUMMARY OF THE RESULTS)
 
-# Introduction
+# 1. Introduction
 
 Cardiovascular diseases are the leading cause of death world wide. It is estimated by the World Health Organization that there are around 17.9 million people who die because of the cardiovascular diseases yearly. It is an estimated 32% of all deaths worldwide [@who]. Some of the important risk factors that contribute to heart disease are unhealthy diet, sedentary lifestyle, tobacco, alcohol abuse and many more. The projection is that the prevalence of heart attack in both genders, man and women, will increase compared with 2025 for ischemic heart disease by 31.1% (21.9M to 28.7M), heart failure by 33.0% (9.7M to 12.9M), myocardial infarction by 30.1% (12.3M to 16.0M), and stroke by 34.3% (10.8M to 14.5M) [@mohebi2022cardiovascular].
 
 Here we are using inferential statistics methods to infer about the relationship between the risks of heart attack and different factors taht might be associated with heart attack. If we were to find the relationship between the different factors contributing the elevated risks of heart attack then we would be able to mitigate the risk by lowering the effect of those contributing factors on individuals lifestyles. In this study we are asked several inferential question and evaluated the statistical significance of the variables contributed to increased risks of heart attack.
 
-# Methods
-
-## Data
+## 2. Data
 
 The data set used in this project is the heart disease data set from the UCI machine learning repository [@aha]. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source data set was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found here [here] (<https://archive.ics.uci.edu/ml/datasets/Heart+Disease>). This data set contains 14 features that deemed to be relevant by the ML researchers. In this project, we will use the cleaned and processed Cleveland data set to conduct an inferential study on factors that could be associated with presence of heart disease.
 
-## Analysis
+## 3. Data Analysis & Results
 
-# Results & Discussion
+```{r load result csv, include=FALSE}
+library(here)
+library(knitr)
+library(kableExtra)
+
+ci <- read.csv(here("results", "bootstrap_ci_results.csv"))
+ci$target <- ifelse(ci$target ==0, "No heart disease", "Presence of heart disease")
+num_res <- read.csv(here("results", "hypothesis_result.csv"))
+cat_res <- read.csv(here("results", "chisq_result.csv"))
+
+```
+
+### 3.1. Investigation on numeric variables
+Based on the exploratory data analysis, we identified the following numeric variables that could potentially associate with presence of heart disease. 
+
+- Higher age
+
+- Lower maximum heart rate achieved
+
+- Higher ST depression induced by exercise relative to rest. 'ST' relates to positions on the ECG plot that often indicates certain emergent condition.
+
+**Methods of Analysis**
+
+As the first step, we compare the sample estimates of these variables of interest between people with heart disease and people without heart disease, and use bootstrapping to estimate a 95% confidence interval as the precision measure of our sample estimates. These statistics give us an overview of how the variables of interest differ between the two groups. 
+
+Secondly, hypothesis testings with permutation are conducted for each of the selected variables to see if there were enough statistical evidence to reject the null hypothesis and state that the variable is indeed associated with presence of heart disease. For age and maximum heart rate achieved, we compare the sample means, and for ST depression induced by exercise, we compare the sample medians due to the skewed distribution of the variable values. We will focus on presenting the conclusion in the discussion below, and more detailed results for permutation hypothesis testing (test statistics, all p-values) are shown in the summary table 3.4.
+
+
+Let's look at the result of the investigated variable in more detail.
+
+#### Age
+
+**The average age of people with presence of heart disease is greater than the average age of people without heart disease.**
+
+The table below shows the sample means of age for people with heart disease and people without heart disease. The average age of people with heart disease is `r ci$sample_estimates[2]`, which is greater than the average age of people without heart disease `r ci$sample_estimates[1]`. The 95% bootstrap CI are not overlapping, further indicates the possibility that the average age of people with presence of heart disease is greater than the average age of people without heart disease.
+
+```{r table, echo = FALSE}
+knitr::kable(ci[1:2, 2:5], caption = "Table 3.1 Sample estimates and 95% bootstrap CI for average age of people with and without heart disease") |>
+	kableExtra::kable_styling(full_width = FALSE)
+```
+
+Hypothesis testing with permutation was then conducted for average age at a significance level of 0.05, with null hypothesis that the average age of people with presence of heart disease is equal to the average age of people without heart disease. The alternative hypothesis is that the average age of people with presence of heart disease is greater than the average age of people without heart disease. We found that there are enough statistical evidence to reject the null and state that the average age of people with presence of heart disease is greater than the average age of people without heart disease (p-value = `r num_res$p_values[[1]]`, less than 0.05). 
+
+
+
+#### Maximum heart rate achieved
+
+**The average maximum heart rate achieved of people with presence of heart disease is lower than the average maximum heart rate achieved of people without heart disease.**
+
+The table below shows the sample means of maximum heart rate achieved for people with heart disease and people without heart disease. The average maximum heart rate achieved of people with heart disease is `r ci$sample_estimates[4]`, which is lower than that of people without heart disease `r ci$sample_estimates[3]`. The 95% bootstrap CI are not overlapping, further indicates the possibility that the average maximum heart rate achieved of people with presence of heart disease is lower than the average age of people without heart disease.
+
+```{r maximum heart rate achieved, echo = FALSE}
+knitr::kable(ci[3:4, 2:5], caption = "Table 3.2 Sample estimates and 95% bootstrap CI for average maximum heart rate achieved of people with and without heart disease") |>
+	kableExtra::kable_styling(full_width = FALSE)
+```
+
+Hypothesis testing with permutation was then conducted for average maximum heart rate achieved at a significance level of 0.05, with null hypothesis that the average maximum heart rate achieved of people with presence of heart disease is equal to that of people without heart disease. The alternative hypothesis is that the average maximum heart rate achieved of people with presence of heart disease is lower than that of people without heart disease. We found that there are enough statistical evidence to reject the null and state that the average maximum heart rate achieved of people with presence of heart disease is lower than the average age of people without heart disease (p-value = `r num_res$p_values[[2]]`, less than 0.05). 
+
+
+#### ST depression induced by exercise relative to rest
+
+**The median ST depression induced by exercise relative to rest of people with presence of heart disease is greater than that of people without heart disease.**
+
+The table below shows the sample median ST depression induced by exercise for people with heart disease and people without heart disease. The median ST depression induced by exercise of people with heart disease is `r ci$sample_estimates[6]`, which is greater than that of people without heart disease `r ci$sample_estimates[5]`. The 95% bootstrap CI are not overlapping, further indicates the possibility that the median ST depression induced by exercise of people with presence of heart disease is greater than that of people without heart disease.
+
+```{r st depression, echo = FALSE}
+knitr::kable(ci[5:6, 2:5], caption = "Table 3.3 Sample estimates and 95% bootstrap CI for median ST depression induced by exercise of people with and without heart disease") |>
+	kableExtra::kable_styling(full_width = FALSE)
+```
+
+Hypothesis testing with permutation was then conducted for average maximum heart rate achieved at a significance level of 0.05, with null hypothesis that the average maximum heart rate achieved of people with presence of heart disease is equal to that of people without heart disease. The alternative hypothesis is that the average maximum heart rate achieved of people with presence of heart disease is lower than that of people without heart disease. We found that there are enough statistical evidence to reject the null and state that the average maximum heart rate achieved of people with presence of heart disease is lower than the average age of people without heart disease (p-value = `r num_res$p_values[[3]]`, less than 0.05). 
+
+
+Note: Table 3.4 summarized the information on the permutation hypothesis testing for the numeric variables.
+```{r all hypothesis result, echo = FALSE}
+knitr::kable(num_res, caption = "Table 3.4 Permutation hypothesis tests results for numeric variables of interest") |>
+	kableExtra::kable_styling(full_width = FALSE)
+```
+
+
+
+### 3.2. Investigation on categorical variables
+
+**Methods of Analysis**
+
+For categorical variables, it is challenging to identify a clear association purely based on visual examination, thus we conducted chi-square tests for the 8 categorical variables in the data set. The null hypothesis of Chi-square test is that the variable of interest and presence of heart disease are independent with each other. The alternative hypothesis of Chi-square test is that the variable of interest is related with presence of heart disease. Since multiple tests were conducted, the tests suffer from inflated type I error. Thus the significance level is adjusted using the Bonferroni correction.
+
+**Results**
+
+Table 3.5 summarizes the chi-square tests results for the 8 categorical variables.
+```{r chi sq result, echo = FALSE}
+knitr::kable(cat_res, caption = "Table 3.5 Chi-square tests results for categorical variables of interest") |>
+	kableExtra::kable_styling(full_width = FALSE)
+```
+
+Based on these test results, we found that there were enough statistical evidence (p-value < 0.00625) to reject the null hypothesis in favor of the alternative hypothesis, and state that sex, chest pain type, exercise induced angina, slope of the peak exercise ST segment, number of major vessels, and defect type are related with presence of heart disease.
 
 
 ###### Limitations & Future Improvements
