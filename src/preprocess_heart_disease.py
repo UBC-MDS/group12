@@ -43,6 +43,7 @@ def main(input_file, out_file):
     # creating a new binary target variable where 1 is a positive class
     heart_modified.loc[(heart_modified.target != 0),'target']=1
 
+
     # replacing all of the "?"" values with NaN
     heart_clean = heart_modified.replace('?', np.nan)
 
