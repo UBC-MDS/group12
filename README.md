@@ -1,6 +1,11 @@
-# Project Proposal for the inferential analysis on factors relate with presence of heart disease
+# Inferential analysis of factors relate with presence of heart disease
 
-This project attempts to find the association between the probability of heart disease and various demographic or medical factors of the patient. We attempt to use hypothesis testing on several demographic and medical factors between people who are not diagnosed with heart disease and those who are diagnosed with heart disease to make inference on whether certain factor are associated with presence of heart disease. 
+
+### Summary
+
+In this project we attempt to find the association between the probability of heart disease and various demographic or health factors of the patients including age, sex, chest pain type, cholesterol levels etc. We perform hypothesis testing using permutation test for numerical variables such as age, the maximum heart rate achieved, and ST depression induced by exercise relative to rest which is considered a proven ECG finding for obstructive coronary atherosclerosis [@lanza2004diagnostic]. Our original data set also included some categorical variables that we use to conduct our hypothesis testing using Chi-Squared Test in the analysis of contingency tables.
+
+We conclude that people with heart disease will have higher average age, lower maximum heart rate achieved, and higher ST depression induced by exercise relative to rest comparing to people without heart disease. We also found that sex, chest pain type, exercise induced angina, slope of the peak exercise ST segment, number of major vessels, and defect type are associated with presence of heart disease.
 
 ### Contributors:
 - Kelly Wu
