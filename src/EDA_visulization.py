@@ -60,7 +60,7 @@ def main(train, out_dir):
     fig, axs = plt.subplots(nrows=3, ncols=2, figsize=(10, 10))
     for col, ax in zip(num_cols, axs.ravel()):
         data.groupby("target")[col].plot.hist(ax = ax, bins=10, alpha=0.5, legend=True,title='Histogram of ' + col)
-        ax.set_xlabel(col)
+        ax.set_xlabel(col,loc="left")
     txt="Histograms of numeric values. We observed that higher age, lower maximum heart rate achieved (thalac) \
          \n and higher ST depression induced by exercise relative to rest (oldpeak) seems to be more frequent in the people with diagnosed heart disease"
     plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
@@ -72,7 +72,7 @@ def main(train, out_dir):
     dfi.export(corr,  out_dir + "/corr.png")
     
     #categorical features plot(only significant features)
-    fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(8, 8))
+    fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10,10))
     categorical_features = ["cp","exang","slope","ca","thal"]
     for col, ax in zip(categorical_features, axs.ravel()):
               data.groupby("target")[col].plot.hist(ax = ax, bins=10, alpha=0.5, legend=True
