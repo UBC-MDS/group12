@@ -18,7 +18,7 @@ We conclude that people with heart disease will have higher average age, lower m
 Final report can be found [here](https://htmlpreview.github.io/?https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/heart_disease_report.html)
 
 ### Usage 
-![Alt text](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/results/Heart_attack_pipeline.png)
+![Alt text](https://github.com/UBC-MDS/inferential_study_heart_attack/blob/main/results/Heart%20attack.png)
 
 In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project one by one, or just run `run_all.sh` file:
 
