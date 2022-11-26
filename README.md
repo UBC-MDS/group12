@@ -15,7 +15,7 @@ Final report can be found [here](https://htmlpreview.github.io/?https://github.c
 ### Usage 
 ![Alt text](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/results/Heart_attack_pipeline.png)
 
-In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project one by one, or just run `bash.sh` file:
+In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project one by one, or just run `run_all.sh` file:
 
 One-by-One
 ```
