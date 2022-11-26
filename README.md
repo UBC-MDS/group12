@@ -8,24 +8,25 @@ This project attempts to find the association between the probability of heart d
 - Zilong Yi
 - Stepan Zaiatc
 
-
 ### Report
 
 Final report can be found [here](https://htmlpreview.github.io/?https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/heart_disease_report.html)
 
 ### Usage 
+![Alt text](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/results/Heart_attack_pipeline.png)
 
-In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project:
+In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project one by one, or just run `bash.sh` file:
 
+## One-by-One
 ```
 # download data
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
 
-# run eda report
-python src/EDA_visulization.py --train="data/raw/processed.cleveland.csv" --out_dir="results"
-
 # pre-process data 
 Rscript src/pre_process_wisc.r --input=data/raw/wdbc.feather --out_dir=data/processed 
+
+# run eda report
+python src/EDA_visulization.py --train="data/raw/processed.cleveland.csv" --out_dir="results"
 
 # create exploratory data analysis figure and write to file 
 python src/preprocess_heart_disease.py --input_file="data/raw/processed.cleveland.csv" --out_file="data/pre_processed/pre_processed_heart.csv"
@@ -37,7 +38,11 @@ Rscript src/data_analysis.r --data_path="data/pre_processed/pre_processed_heart.
 Rscript -e "rmarkdown::render('doc/heart_disease_report.Rmd', output_format = 'github_document')
 ```
 
-## Dataset
+## All at once:
+```
+bash src/run_all.sh
+```
+### Dataset
 
 The dataset used in this project is the heart disease data set from the UCI machine learning repository. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source dataset was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found [here](https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data). 
 This dataset contains 14 features that deemed to be relevant by the ML researchers. In this project, we will use the cleaned and processed Cleveland data set to conduct an inferential study on factors that could be associated with presence of heart disease. 
