@@ -1,5 +1,5 @@
 ---
-title: "Inferential analysis on factors relate with presence of heart disease"
+title: "Inferential analysis on factors relate to presence of heart disease"
 author: "Kelly Wu </br>
 Bruce Wu </br>
 Zilong Yi </br>
@@ -43,7 +43,7 @@ Here we are using inferential statistics methods to infer about the relationship
 # 2. Data
 
 ### 2.1 Source
-The data set used in this project is the heart disease data set from the UCI machine learning repository [@aha]. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source data set was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found here [here] (<https://archive.ics.uci.edu/ml/datasets/Heart+Disease>). This data set contains 14 features that deemed to be relevant by the ML researchers. In this project, we will use the cleaned and processed Cleveland data set to conduct an inferential study on factors that could be associated with presence of heart disease.
+The data set used in this project is the heart disease data set from the UCI machine learning repository [@aha]. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source data set was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found [here](https://archive.ics.uci.edu/ml/datasets/Heart+Disease). This data set contains 14 features that deemed to be relevant by the ML researchers. In this project, we will use the cleaned and processed Cleveland data set to conduct an inferential study on factors that could be associated with presence of heart disease.
 
 ### 2.2 Explanatory data analysis
 <!-- #endregion -->
@@ -52,14 +52,14 @@ At the very beginning, it is beneficial for us to look at the correlation table 
 Then, we can use graphical method to analyze the numeric factors to find whether it is related to the probability of heart attack. From all the plots, we can find the factors we want to research on.  
 \n
 
-```{r}
+```{r fig.align='center'}
 knitr::include_graphics("../results/numeric.jpg")
 ```
 \n  
 
 Finally, for the categorical variables, we look at the count of each category among the two groups and select four significant categorical variables below.  
 
-```{r}
+```{r fig.align='center'}
 knitr::include_graphics("../results/categorical.jpg")
 ```
 
