@@ -17,7 +17,7 @@ Final report can be found [here](https://htmlpreview.github.io/?https://github.c
 
 In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project one by one, or just run `bash.sh` file:
 
-## One-by-One
+One-by-One
 ```
 # download data
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
@@ -38,8 +38,12 @@ Rscript src/data_analysis.r --data_path="data/pre_processed/pre_processed_heart.
 Rscript -e "rmarkdown::render('doc/heart_disease_report.Rmd', output_format = 'github_document')
 ```
 
-## All at once:
+All at once:
 ```
+# This script completes analysis of heart-attack
+# including data-downloading, preprocessing, EDA,
+# hypotheisi testing(feature selection), Model building etc. 
+
 bash src/run_all.sh
 ```
 ### Dataset
