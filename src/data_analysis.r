@@ -1,5 +1,10 @@
+# author: Heart Attack Group 12
+# date: 2022-11-23
+
 "This script runs data analysis for the preprocessed heart disease data.
-Usage: data_analysis.r --data_path=<path>
+
+Usage: src/data_analysis.r --data_path=<path>
+
 Options:
 --data_path=<path> Takes the path to a directory where the pre-processed dataset is stored (this is a required option)
 " -> doc
