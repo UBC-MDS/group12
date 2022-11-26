@@ -1,9 +1,9 @@
-# Inferential analysis of factors relate with presence of heart disease
+# Inferential analysis of factors related to presence of heart disease
 
 
 ### Summary
 
-In this project we attempt to find the association between the probability of heart disease and various demographic or health factors of the patients including age, sex, chest pain type, cholesterol levels etc. We perform hypothesis testing using permutation test for numerical variables such as age, the maximum heart rate achieved, and ST depression induced by exercise relative to rest which is considered a proven ECG finding for obstructive coronary atherosclerosis [@lanza2004diagnostic]. Our original data set also included some categorical variables that we use to conduct our hypothesis testing using Chi-Squared Test in the analysis of contingency tables.
+In this project we attempt to find the association between the probability of heart disease and various demographic or health factors of the patients including age, sex, chest pain type, cholesterol levels etc. We perform hypothesis testing using permutation test for numerical variables such as age, the maximum heart rate achieved, and ST depression induced by exercise relative to rest which is considered a proven ECG finding for obstructive coronary atherosclerosis (Lanza et al., 2004). Our original data set also included some categorical variables that we use to conduct our hypothesis testing using Chi-Squared Test in the analysis of contingency tables.
 
 We conclude that people with heart disease will have higher average age, lower maximum heart rate achieved, and higher ST depression induced by exercise relative to rest comparing to people without heart disease. We also found that sex, chest pain type, exercise induced angina, slope of the peak exercise ST segment, number of major vessels, and defect type are associated with presence of heart disease.
 
@@ -134,3 +134,5 @@ The materials of this inferential analysis on factors relate with presence of he
 ## References
 
 Dua, Dheeru, and Casey Graff. 2019. “UCI Machine Learning Repository.” University of California, Irvine, School of Information; Computer Sciences. http://archive.ics.uci.edu/ml.
+
+Lanza, Gaetana A., et al. "Diagnostic and prognostic value of ST segment depression limited to the recovery phase of exercise stress test." Heart 90.12 (2004): 1417-1421.
