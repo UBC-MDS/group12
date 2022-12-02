@@ -49,8 +49,15 @@ All at once:
 # including data-downloading, preprocessing, EDA,
 # hypotheisi testing(feature selection), Model building etc. 
 
-bash src/run_all.sh
+make all
 ```
+
+Run the following command at the command line or terminal from the root directory of this project to reset the repository to a clean state with no intermediate or results files:
+```
+make clean
+```
+
+
 ### Dataset
 
 The dataset used in this project is the heart disease data set from the UCI machine learning repository. The original unprocessed source data files includes 76 features about the patents from 4 regions (Cleveland, Hungary, Switzerland, and the VA Long Beach). The unprocessed data contains lots of unidentified values, missing values and uncleaned data for many features. Among the data files from the 4 regions, only the data from Cleveland has been cleaned and became widely used by the data science community. The source dataset was created by Robert Detrano at V.A. Medical Center, Long Beach and Cleveland Clinic Foundation. The cleaned Cleveland data is sourced from the UCI machine learning repository (Dua and Graff 2017) and can be found [here](https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data). 
