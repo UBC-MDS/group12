@@ -125,6 +125,8 @@ Note on reproducing the analysis: our the analysis is conducted with the followi
 
 - ipython==7.10.1
 
+- dataframe-image==0.1.3
+
 #### R version 4.2.1 and R packages:
 
 - knitr==1.40
