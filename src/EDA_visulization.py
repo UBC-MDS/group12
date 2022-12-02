@@ -65,7 +65,7 @@ def main(train, out_dir):
          \n and higher ST depression induced by exercise relative to rest (oldpeak) seems to be more frequent in the people with diagnosed heart disease"
     plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
     plt.savefig(out_dir + "/numeric.jpg")
-    plt.show()
+    
     
     # correlation of numeric features
     corr=data[["age","trestbps","chol","thalach","oldpeak","target"]].corr().style.background_gradient()
@@ -82,7 +82,7 @@ def main(train, out_dir):
          \n probability of heart attack and we will discuss them later."
     plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)   
     plt.savefig(out_dir + "/categorical.jpg")
-    plt.show()
+    
 
 if __name__ == "__main__":
     main(opt["--train"], opt["--out_dir"])
