@@ -26,12 +26,11 @@ def main(url, out_file):
         URL from where to download the dataset (must be in standard csv format)
     out_file : str
         File name with the path where to write the file
-  """
-
-  data = pd.read_csv(url, header=None)
-  
-  os.makedirs(os.path.dirname(out_file))
-  data.to_csv(out_file, index = False)
+    """
+    data = pd.read_csv(url, header=None)
+    
+    os.makedirs(os.path.dirname(out_file))
+    data.to_csv(out_file, index = False)
  
 if __name__ == "__main__":
   main(opt["--url"], opt["--out_file"])
