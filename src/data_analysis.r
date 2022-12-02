@@ -19,7 +19,7 @@ library(docopt)
 opt <- docopt(doc)
 
 # load preprocessed data from the input path
-heart_data <- read_csv(opt$path)
+heart_data <- read_csv(opt$data_path)
 
 # CODE BELOW ARE NOT FOR PIPELINE
 # if one wants to work on the analysis script stand-alone file, then the follow code could be helpful for preprocessing
