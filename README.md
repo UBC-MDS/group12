@@ -28,7 +28,7 @@ One-by-One
 python src/download_file.py --url="https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data" --out_file="data/raw/processed.cleveland.csv"
 
 # pre-process data 
-Rscript src/pre_process_wisc.r --input=data/raw/wdbc.feather --out_dir=data/processed 
+python src/preprocess_heart_disease.py --input_file="data/raw/processed.cleveland.csv" --out_file="data/pre_processed/pre_processed_heart.csv" 
 
 # run eda report
 python src/EDA_visulization.py --train="data/raw/processed.cleveland.csv" --out_dir="results"
