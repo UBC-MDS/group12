@@ -18,7 +18,7 @@ import pandas as pd
 opt = docopt(__doc__)
 
 def main(url, out_file):
-"""
+    """
     This main will download the dataset from the default url to the default path
     Parameters
     ----------
