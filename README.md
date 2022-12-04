@@ -127,13 +127,25 @@ Note on reproducing the analysis: our the analysis is conducted with the followi
 
 - dataframe-image==0.1.3
 
+- seaborn==0.12.1
+
 #### R version 4.2.1 and R packages:
 
 - knitr==1.40
 
 - tidyverse==1.3.2
 
-- ggplot==3.3.6
+- ggplot2==3.3.6
+
+- kableExtra==1.3.4
+
+- infer==1.0.3
+
+- janitor==2.1.0
+
+- docopt==0.7.1
+
+- here==1.0.1
 
 
 
