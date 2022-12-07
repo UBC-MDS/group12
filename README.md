@@ -95,7 +95,7 @@ Also, for categorical features, we will do cross-tabulations to see the frequenc
 
 With EDA, we would be able to get an idea of which factors to further examine.
 
-Our analysis will be driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/EDA_group_12.ipynb).
+Our analysis will be driven by the observations we found during exploratory data analysis (EDA file available [here](https://github.com/UBC-MDS/inferential_study_heart_attack/blob/main/doc/EDA_heart_disease.ipynb).
 
 In later analysis, we are going to conduct hypothesis testing to investigate a the identified potentially factors that could possibly associates with presence of heart attack. Specifically, 
 - For numeric features, we will first check the central tendency, then conduct hypothesis testing. For example, maximum heart rate achieved is an variable of interest. We will first investigate the central tendency of maximum heart rate achieved of the two groups by estimating the average with sample means. We will also use bootstrapping method to provide precision measure for our estimate. Then we will conduct one-sided hypothesis testing with permutation to test our hypothesis. Our null hypothesis is that the average maximum heart rate achieved are the same between people with heart disease and without heart disease. Our alternative hypothesis is that the average maximum heart rate achieved is lower for people with heart disease than that of people without heart disease.
