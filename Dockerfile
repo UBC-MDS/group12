@@ -43,29 +43,3 @@ RUN pip install altair vega_datasets
 RUN pip install altair_saver
 
 RUN pip install dataframe_image
-
-
-
-# RUN apt-get update
-# RUN apt-get install r-base r-base-dev python3.6 python3-pip python3-setuptools -y
-
-# RUN Rscript -e "install.packages('cowsay')"
-# RUN Rscript -e "install.packages('tidyverse')"
-# RUN Rscript -e "install.packages('infer')"
-# RUN Rscript -e "install.packages('janitor')"
-# RUN Rscript -e "install.packages('rmarkdown')"
-# RUN Rscript -e "install.packages('knitr')"
-# RUN Rscript -e "install.packages('kableExtra')"
-# RUN Rscript -e "install.packages('here')"
-
-# # install docopt python package
-# RUN conda install -y -c anaconda \ 
-#     docopt \
-#     dataframe_image \ 
-#     seaborn \
-#     altair \
-#     altair_saver 
-
-
-
-
