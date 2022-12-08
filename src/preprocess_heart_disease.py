@@ -2,7 +2,7 @@
 # date: 2022-11-23
 
 """
-"The script cleans and pre-processes the Heart Disease dataset 
+"The script cleans and pre-processes the Heart Disease dataset. In particular, we are going to impute missing values and drop the rows containing those msising values.
 (from https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/#:~:text=processed.cleveland.data).
 This script writes out cleaned and processed output file to a separate csv files.
 
