@@ -72,27 +72,27 @@ Our research question: what factor(s) are associated with presence of heart dise
 - If we do find a factor that shows statistical significance, how large is its effect on the probability of presence of heart disease? 
 
 We have the following columns available from the dataset :
-- 1. age: This is the age of the study participant. 
-- 2. sex: This is the gender of the study participant, with 1 representing male and 0 representing female. 
-- 3. cp: This stands for "chest pain type," and is a measure of the type of chest pain the participant experiences. It is an ordinal variable with the following possible values:
+1. age: This is the age of the study participant. 
+2. sex: This is the gender of the study participant, with 1 representing male and 0 representing female. 
+3. cp: This stands for "chest pain type," and is a measure of the type of chest pain the participant experiences. It is an ordinal variable with the following possible values:
       0: asymptomatic
       1: atypical angina
       2: non-anginal pain
       3: typical angina
-- 4. trestbps: This stands for "resting blood pressure," which is the blood pressure measured after the person has been sitting or lying down for a few minutes. It is a measure of the pressure of the blood against the walls of the arteries.
-- 5. chol: This stands for "serum cholesterol," which is a measure of the amount of cholesterol in the blood. Cholesterol is a type of fat that is essential for the proper function of the body, but high levels of cholesterol in the blood can increase the risk of heart disease.
-- 6. fbs: This stands for "fasting blood sugar," which is a measure of the amount of sugar (glucose) in the blood after the person has fasted for at least 8 hours. It is used to diagnose diabetes and to monitor blood sugar control in people with diabetes.
-- 7. restecg: This stands for "resting electrocardiography," which is a test that records the electrical activity of the heart. It is often used to diagnose heart conditions, such as arrhythmias (abnormal heart rhythms) or to assess the overall health of the heart.
-- 8. thalach: This stands for "maximum heart rate achieved," which is the highest heart rate a person reaches during exercise. It is often used to assess a person's cardiovascular fitness.
-- 9. exang: This stands for "exercise-induced angina," which is chest pain that occurs during or after physical activity. It is often a sign of underlying heart disease. This variable is binary, with 0 representing no exercise-induced angina and 1 representing exercise-induced angina.
-- 10. oldpeak: This is the "ST depression induced by exercise relative to rest," which is a measure of the change in the electrical activity of the heart during exercise compared to when the person is at rest. A large depression can be a sign of heart disease.
-- 11. slope: This is the "slope of the peak exercise ST segment," which is a measure of the shape of the segment of the electrocardiogram (ECG) that represents the heart's electrical activity during exercise.
-- 12. ca: This stands for "number of major vessels (0-3) colored by flourosopy," which is a measure of the number of major blood vessels that are visible on a medical imaging test called flourosopy.
-- 13. thal: This stands for "defect," which is a measure of the presence of a heart defect. It is an ordinal variable with the following possible values:
+4. trestbps: This stands for "resting blood pressure," which is the blood pressure measured after the person has been sitting or lying down for a few minutes. It is a measure of the pressure of the blood against the walls of the arteries.
+5. chol: This stands for "serum cholesterol," which is a measure of the amount of cholesterol in the blood. Cholesterol is a type of fat that is essential for the proper function of the body, but high levels of cholesterol in the blood can increase the risk of heart disease.
+6. fbs: This stands for "fasting blood sugar," which is a measure of the amount of sugar (glucose) in the blood after the person has fasted for at least 8 hours. It is used to diagnose diabetes and to monitor blood sugar control in people with diabetes.
+7. restecg: This stands for "resting electrocardiography," which is a test that records the electrical activity of the heart. It is often used to diagnose heart conditions, such as arrhythmias (abnormal heart rhythms) or to assess the overall health of the heart.
+8. thalach: This stands for "maximum heart rate achieved," which is the highest heart rate a person reaches during exercise. It is often used to assess a person's cardiovascular fitness.
+9. exang: This stands for "exercise-induced angina," which is chest pain that occurs during or after physical activity. It is often a sign of underlying heart disease. This variable is binary, with 0 representing no exercise-induced angina and 1 representing exercise-induced angina.
+10. oldpeak: This is the "ST depression induced by exercise relative to rest," which is a measure of the change in the electrical activity of the heart during exercise compared to when the person is at rest. A large depression can be a sign of heart disease.
+11. slope: This is the "slope of the peak exercise ST segment," which is a measure of the shape of the segment of the electrocardiogram (ECG) that represents the heart's electrical activity during exercise.
+12. ca: This stands for "number of major vessels (0-3) colored by flourosopy," which is a measure of the number of major blood vessels that are visible on a medical imaging test called flourosopy.
+13. thal: This stands for "defect," which is a measure of the presence of a heart defect. It is an ordinal variable with the following possible values:
       3: normal
       6: fixed defect
       7: reversible defect
-- 14. target: This is the "diagnosis of heart disease" and is the binary outcome variable, with 0 representing no heart disease and 1 representing heart disease.
+14. target: This is the "diagnosis of heart disease" and is the binary outcome variable, with 0 representing no heart disease and 1 representing heart disease.
 
 Our planned analysis includes the following steps and methods. 
 
