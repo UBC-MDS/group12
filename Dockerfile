@@ -34,7 +34,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_6
 # put anaconda python in path
 ENV PATH="/opt/conda/bin:${PATH}"
 
-# install docopt python package
+# install chrome
 RUN apt-get update && \
     apt-get install -y gnupg wget curl unzip --no-install-recommends && \
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
@@ -46,11 +46,12 @@ RUN apt-get update && \
     wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$DRIVERVER/chromedriver_linux64.zip" && \
     unzip /chromedriver/chromedriver* -d /chromedriver
     
+
+# install python packages
 RUN pip install docopt-ng
 RUN pip install seaborn
 
 RUN pip install altair vega_datasets
-# RUN pip install chromedriver-py
 RUN pip install dataframe_image
 RUN pip install altair_saver
 RUN pip install chardet
