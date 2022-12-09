@@ -36,12 +36,12 @@ docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg kellywujy/tidyin
 
 **If you use Mac M1/M2 (Apple silicon - arm64), please run this**
 ```
-docker run --rm --platform linux/amd64 -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg kellywujy/tidyinferential make -C '/home/data_analysis_eg' all
+docker run --rm --platform linux/amd64 -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C '/home/data_analysis' all
 ```
 
 To clean up the analysis type:
 ```
-docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg ttimbers/data_analysis_pipeline_eg make -C '/home/data_analysis_eg' clean
+docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg ttimbers/data_analysis make -C '/home/data_analysis' clean
 ```
 
 #### Option 2: Reproduce the analysis with Makefile or shell script
