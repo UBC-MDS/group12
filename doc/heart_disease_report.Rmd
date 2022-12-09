@@ -1,9 +1,6 @@
 ---
 title: "Inferential analysis on factors relate to presence of heart disease"
-author: "Kelly Wu </br>
-Bruce Wu </br>
-Zilong Yi </br>
-Stepan Zaiatc </br>"
+author: "Kelly Wu, Stepan Zaiatc, Bruce Wu, Zilong Yi"
 date: "2022/11/25 (updated: `r Sys.Date()`)"
 always_allow_html: true
 output: 
