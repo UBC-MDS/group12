@@ -6,6 +6,7 @@ The databases will be downloaded to the out_file path specified.
 In this project the data is downloaded into the data/raw folder.
 
 Usage: download_file.py --url=<url> --out_file=<out_file>
+
 Options:
 --url=<url>              URL from where to download the data (must be in standard csv format)
 --out_file=<out_file>    Path (including filename) of where to locally write the file
