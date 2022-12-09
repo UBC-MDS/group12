@@ -60,7 +60,7 @@ def main(train, out_dir):
     fig, axs = plt.subplots(nrows=3, ncols=2, figsize=(10, 10))
     for col, ax in zip(num_cols, axs.ravel()):
         data.groupby("target")[col].plot.hist(ax = ax, bins=10, alpha=0.5, legend=True,title='Histogram of ' + col)
-        ax.set_xlabel(col,loc="left")
+        ax.set_xlabel(col)
     txt="Histograms of numeric values. We observed that higher age, lower maximum heart rate achieved (thalac) \
          \n and higher ST depression induced by exercise relative to rest (oldpeak) seems to be more frequent in the people with diagnosed heart disease"
     plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
@@ -77,7 +77,7 @@ def main(train, out_dir):
     for col, ax in zip(categorical_features, axs.ravel()):
               data.groupby("target")[col].plot.hist(ax = ax, bins=10, alpha=0.5, legend=True
                                                ,title='Histogram of ' + col)
-              ax.set_xlabel(col,loc="left")
+              ax.set_xlabel(col)
     txt="Histograms of categorical values. We observed that some categorical variables with certain values have some relationship with the  \
          \n probability of heart attack and we will discuss them later."
     plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)   
