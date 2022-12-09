@@ -1,5 +1,5 @@
-# Docker file for the heart disease inferential analysis project
-# Kelly Wu, Zilong Yi, Stepan Zaiatc, Bruce Wu
+# Docker file for the heart disease inferential analysis project 
+# Group 12: Kelly Wu, Zilong Yi, Stepan Zaiatc, Bruce Wu
 
 # rocker/tidyverse as the base image
 FROM rocker/tidyverse
