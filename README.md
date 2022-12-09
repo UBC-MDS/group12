@@ -18,8 +18,33 @@ We conclude that people with heart disease will have higher average age, lower m
 Final report can be found [here](https://htmlpreview.github.io/?https://github.com/UBC-MDS/heart_attack_gr12/blob/main/doc/heart_disease_report.html)
 
 ### Usage 
+Here is an overview of our reporsitory's file structure.
 ![Alt text](https://github.com/UBC-MDS/inferential_study_heart_attack/blob/main/results/Heart%20attack.png)
 
+#### Option 1: Reproduce the analysis with Docker
+To run this analysis using Docker, clone/download this repository, use the command line to navigate to the root of this project on your computer, and then type the following (filling in PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project on your computer, or $PWD if you are already in the project directory).
+
+This command will pull the docker image kellywujy/tidyinferential from docker hub, create the container, and run makefile inside the container. 
+
+NOTE: RUN ONE OF THE FOLLOWING COMMAND, DEPENDING ON YOUR PROCESSOR
+
+
+**If you use Intel processors - amd64, please run this**
+```
+docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg kellywujy/tidyinferential make -C '/home/data_analysis_eg' all
+```
+
+**If you use Mac M1/M2 (Apple silicon - arm64), please run this**
+```
+docker run --rm --platform linux/amd64 -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg kellywujy/tidyinferential make -C '/home/data_analysis_eg' all
+```
+
+To clean up the analysis type:
+```
+docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg ttimbers/data_analysis_pipeline_eg make -C '/home/data_analysis_eg' clean
+```
+
+#### Option 2: Reproduce the analysis with Makefile or shell script
 In order to reproduce the analysis, clone the repository, install [dependencies](#dependencies) listed below, (or if you use conda, using [enviroment.yml](https://github.com/UBC-MDS/heart_attack_gr12/blob/main/environment.yml) to install corresponding packages), and run the following commands in the command line/terminal from the root directory of this project one by one, or just run `run_all.sh` file:
 
 One-by-One
