@@ -31,17 +31,17 @@ NOTE: RUN ONE OF THE FOLLOWING COMMAND, DEPENDING ON YOUR PROCESSOR
 
 **If you use Intel processors - amd64, please run this**
 ```
-docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C '/home/data_analysis' all
+docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C /home/data_analysis all
 ```
 
 **If you use Mac M1/M2 (Apple silicon - arm64), please run this**
 ```
-docker run --rm --platform linux/amd64 -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C '/home/data_analysis' all
+docker run --rm --platform linux/amd64 -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C /home/data_analysis all
 ```
 
 To clean up the analysis type:
 ```
-docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C '/home/data_analysis' clean
+docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C /home/data_analysis clean
 ```
 
 #### Option 2: Reproduce the analysis with Makefile or shell script
