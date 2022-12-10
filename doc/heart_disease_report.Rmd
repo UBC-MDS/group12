@@ -70,14 +70,14 @@ After some basic data cleaning, we can find that our data contain both numeric a
 \n
 
 ```{r fig.align='center'}
-knitr::include_graphics("../results/numeric.jpg")
+knitr::include_graphics("../results/EDA_results/numeric.jpg")
 ```
 \n  
 
 Finally, for the categorical variables, we look at the count of each category among the two groups and select four significant categorical variables below.  
 
 ```{r fig.align='center'}
-knitr::include_graphics("../results/categorical.jpg")
+knitr::include_graphics("../results/EDA_results/categorical.jpg")
 ```
 
 
@@ -86,10 +86,10 @@ knitr::include_graphics("../results/categorical.jpg")
 ```{r load result csv, include=FALSE}
 library(here)
 
-ci <- read.csv(here("results", "bootstrap_ci_results.csv"))
+ci <- read.csv(here("results/analysis_results", "bootstrap_ci_results.csv"))
 ci$target <- ifelse(ci$target ==0, "No heart disease", "Presence of heart disease")
-num_res <- read.csv(here("results", "hypothesis_result.csv"))
-cat_res <- read.csv(here("results", "chisq_result.csv"))
+num_res <- read.csv(here("results/analysis_results", "hypothesis_result.csv"))
+cat_res <- read.csv(here("results/analysis_results", "chisq_result.csv"))
 
 ```
 
