@@ -7,7 +7,7 @@ Saves the plots as a pdf and png file.
 Usage: src/EDA_visulization.py --train=<train> --out_dir=<out_dir>
 
 Example: 
-python src/EDA_visulization.py --train="data/raw/processed.cleveland.csv" --out_dir="results"
+python src/EDA_visulization.py --train="data/raw/processed.cleveland.csv" --out_dir="results/EDA_results"
   
 Options:
 --train=<train>     Path (including filename) to training data 
