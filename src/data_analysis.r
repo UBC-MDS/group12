@@ -114,7 +114,7 @@ oldpeak_median_ci <- medians |> left_join(ci_estimates)
 
 # Export all CI and sample estimates in a table as csv for reporting
 bootstrap_ci_results <- rbind(age_mean_ci, thalach_mean_ci, oldpeak_median_ci)
-write.csv(bootstrap_ci_results, "results/bootstrap_ci_results.csv", row.names = FALSE)
+write.csv(bootstrap_ci_results, "results/analysis_results/bootstrap_ci_results.csv", row.names = FALSE)
 
 
 # Next perform the hypothesis testing with permutation
@@ -169,7 +169,7 @@ hypothesis_result <- data.frame(variables, estimator, H_a,
                                 target0_estimate, target1_estimate, test_statistic,
                                 p_values)
 # export for reporting
-write.csv(hypothesis_result, "results/hypothesis_result.csv", row.names = FALSE)
+write.csv(hypothesis_result, "results/analysis_results/hypothesis_result.csv", row.names = FALSE)
 
 
 
@@ -209,5 +209,5 @@ chisq_result <- chisq_result |> select(variable, statistic, p.value) |>
          p.value = round(p.value, 6),
          statistic = round(statistic, 2))
 
-write.csv(chisq_result, "results/chisq_result.csv", row.names = FALSE)
+write.csv(chisq_result, "results/analysis_results/chisq_result.csv", row.names = FALSE)
 
