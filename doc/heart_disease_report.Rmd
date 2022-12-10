@@ -69,7 +69,12 @@ The data set used in this project is the heart disease data set from the Univers
 
 ### 2.2 Exploratory data analysis
 <!-- #endregion -->
-After some basic data cleaning, we can find that our data contain both numeric and categorical features, but they are stored as numeric values. At the very beginning, it is beneficial for us to look at the correlation table of each numeric factor to the target and then choose our numeric factors with relatively high absolute value of correlation. Then, we can use a graphical method to analyze the numeric factors to find whether it is related to the probability of heart attack. From all the plots, we can find the factors we want to research on. The histograms below show the distributions of explanatory variables in relation to the target.  
+After some basic data cleaning, we can find that our data contain both numeric and categorical features, but they are stored as numeric values. At the very beginning, it is beneficial for us to look at the correlation table of each numeric factor to the target and then choose our numeric factors with relatively high absolute value of correlation.  
+```{r fig.align='center'}
+knitr::include_graphics("../results/EDA_results/corr.png")
+```
+
+Then, we can use a graphical method to analyze the numeric factors to find whether it is related to the probability of heart attack. From all the plots, we can find the factors we want to research on. The histograms below show the distributions of explanatory variables in relation to the target.  
 
 Numeric,continuous variables: age, trestbps, chol, thalach, oldpeaks.  
 Categorical variables: cp (4 levels), exang (2 levels), slope (3 levels), ca (4 levels). The descriptions of those variables can be found above.
