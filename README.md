@@ -19,7 +19,7 @@ Final report can be found [here](https://htmlpreview.github.io/?https://github.c
 
 ### Usage 
 Here is an overview of our reporsitory's file structure.
-![Alt text](https://github.com/UBC-MDS/inferential_study_heart_attack/blob/main/results/Heart%20attack.png)
+![Alt text](https://github.com/UBC-MDS/inferential_study_heart_attack/blob/main/Makefile.png)
 
 #### Option 1: Reproduce the analysis with Docker
 To run this analysis using Docker, clone/download this repository, use the command line to navigate to the root of this project on your computer, and then type the following (filling in PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project on your computer, or $PWD if you are already in the project directory).
@@ -156,8 +156,6 @@ Note on reproducing the analysis: our the analysis is conducted with the followi
 - pandas==1.5.1
 
 - ipython==7.10.1
-
-- dataframe-image==0.1.3
 
 - seaborn==0.12.1
 
