@@ -39,6 +39,11 @@ docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinfer
 docker run --rm --platform linux/amd64 -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C /home/data_analysis all
 ```
 
+**Windows User** You need to duplicate the / symbol:
+```
+docker run --rm -v /$(pwd)://home//rstudio//data_analysis kellywujy/tidyinferential make -C //home//rstudio//data_analysis all
+```
+
 To clean up the analysis type:
 ```
 docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis kellywujy/tidyinferential make -C /home/data_analysis clean
