@@ -28,6 +28,11 @@ This command will pull the docker image kellywujy/tidyinferential from docker hu
 
 NOTE: RUN ONE OF THE FOLLOWING COMMAND, DEPENDING ON YOUR PROCESSOR
 
+Pull the docker image:
+
+```
+docker pull kellywujy/tidyinferential:v0.3.0
+```
 
 **If you use Intel processors - amd64, please run this**
 ```
